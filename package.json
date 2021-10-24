@@ -1,5 +1,5 @@
 {
-  "name": "@satelite/engineer-template",
+  "name": "@satelite/engineer-template-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ErickRuano/engineer-template.git"
+    "url": "git+https://github.com/satelite-digital/engineer-template-react.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ErickRuano/engineer-template/issues"
+    "url": "https://github.com/satelite-digital/engineer-template-react/issues"
   },
-  "homepage": "https://github.com/ErickRuano/engineer-template#readme"
+  "homepage": "https://github.com/satelite-digital/engineer-template-react#readme"
 }
