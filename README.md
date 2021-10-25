@@ -54,6 +54,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![Template Screenshot][product-screenshot]
+
 This template includes a basic React web application setup to use with Satelite Engineer.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -134,4 +136,4 @@ Project Link: [https://github.com/satelite-digital/engineer-template-react](http
 [license-url]: https://github.com/satelite-digital/engineer-template-react/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/erick-ruano-fullstack
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: screenshot.png
