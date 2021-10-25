@@ -1,6 +1,6 @@
 const Table = ({ rows }) => (
-  <div class="overflow-x-auto">
-    <table class="table w-full">
+  <div className="overflow-x-auto">
+    <table className="table w-full">
       <thead>
         <tr>
           <th></th>
@@ -11,7 +11,7 @@ const Table = ({ rows }) => (
       </thead>
       <tbody>
         {rows.map((row) => (
-          <tr>
+          <tr key={row}>
             <th>{row}</th>
             <td>Marjy Ferencz</td>
             <td>Office Assistant I</td>
