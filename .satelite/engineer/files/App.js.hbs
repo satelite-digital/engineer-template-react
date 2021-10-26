@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-{{#each schema}}
+{{#each pages}}
 import {{name}} from "./pages/{{name}}";
 {{/each}}
 function App() {
   const links = [
-  {{#each schema}}
+  {{#each pages}}
+  {{#if navigation}}
     {
-      path: "/{{id}}",
+      path: "{{path}}",
       text: "{{name}}",
     },
+  {{/if}}
   {{/each}}
   ];
   return (
@@ -20,8 +22,8 @@ function App() {
       </header>
       <main className="p-8">
         <Switch>
-          {{#each schema}}
-          <Route path="/{{id}}">
+          {{#each pages}}
+          <Route path="{{path}}">
             <{{name}} />
           </Route>
           {{/each}}

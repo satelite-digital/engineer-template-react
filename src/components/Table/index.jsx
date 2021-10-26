@@ -1,21 +1,19 @@
-const Table = ({ rows }) => (
+
+const Table = ({ rows, headers, onRowClick }) => (
   <div className="overflow-x-auto">
     <table className="table w-full">
       <thead>
         <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Job</th>
-          <th>Favorite Color</th>
+          {headers.map((header)=>(
+            <th>{header}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
         {rows.map((row) => (
-          <tr key={row}>
-            <th>{row}</th>
+          <tr className="cursor-pointer" key={row} onClick={()=>{onRowClick(row)}}>
             <td>Marjy Ferencz</td>
-            <td>Office Assistant I</td>
-            <td>Crimson</td>
+            <td>Marjy Ferencz</td>
           </tr>
         ))}
       </tbody>

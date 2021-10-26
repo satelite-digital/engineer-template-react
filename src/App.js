@@ -1,17 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Page from "./pages/Page";
-import Other from "./pages/Other";
+import Users from "./pages/Users";
+import User from "./pages/User";
 function App() {
   const links = [
     {
-      path: "/page",
-      text: "Page",
-    },
-    {
-      path: "/other",
-      text: "Other",
+      path: "/users",
+      text: "Users",
     },
   ];
   return (
@@ -21,11 +17,11 @@ function App() {
       </header>
       <main className="p-8">
         <Switch>
-          <Route path="/page">
-            <Page />
+          <Route path="/users">
+            <Users />
           </Route>
-          <Route path="/other">
-            <Other />
+          <Route path="/user/:id">
+            <User />
           </Route>
           <Route path="/">
             <Home />

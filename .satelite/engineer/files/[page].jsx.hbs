@@ -1,25 +1,31 @@
-{{#if display.table}}
-import Table from "../../components/Table";
+{{#each hooks}}
+{{{import}}}
+{{/each}}
+{{#each ui}}
+{{#if component}}
+import {{component}} from "../../components/{{component}}";
 {{/if}}
-{{#if display.cards}}
-import Card from "../../components/Card";
-{{/if}}
+{{/each}}
 
 const {{name}} = () => {
-  const items = [0, 1, 2, 3, 4, 5, 6];
+  {{#each hooks}}
+  {{{implementation}}}
+  {{/each}}
+  {{#each state}}
+  {{type}} {{id}} = {{{value}}};
+  {{/each}}
+  {{#each actions}}
+  const {{id}} = {{{value}}};
+  {{/each}}
   return (
-      {{#if display.cards}}
-      <div className="grid gap-4 grid-cols-3">
-        {items.map((item) => (
-          <Card key={item} title="Title">
-            Content {item}
-          </Card>
-        ))}
-      </div>
-      {{/if}}
-      {{#if display.table}}
-      <Table rows={items} />
-      {{/if}}
+      {{#each ui}}
+      <{{component}}
+        {{#each props}}
+        {{prop}}={ {{~value~}} }
+        {{/each}}
+      />
+      {{/each}}
+      
   );
 };
 
