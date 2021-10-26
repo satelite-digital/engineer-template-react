@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Users from "./pages/Users";
 import User from "./pages/User";
+import Users from "./pages/Users";
 function App() {
   const links = [
     {
@@ -17,11 +17,11 @@ function App() {
       </header>
       <main className="p-8">
         <Switch>
-          <Route path="/users">
-            <Users />
-          </Route>
           <Route path="/user/:id">
             <User />
+          </Route>
+          <Route path="/users">
+            <Users />
           </Route>
           <Route path="/">
             <Home />

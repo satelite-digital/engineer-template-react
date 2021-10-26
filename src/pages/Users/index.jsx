@@ -1,5 +1,4 @@
 import { useHistory } from 'react-router-dom'
-import Table from "../../components/Table";
 
 const Users = () => {
   const history = useHistory();
@@ -7,10 +6,9 @@ const Users = () => {
   const headers = ['name', 'email'];
   const onUserClick = (user)=>history.push(`/user/${user}`);
   return (
-      <Table
-        rows={items}
-        headers={headers}
-        onRowClick={onUserClick}
+      <
+      />
+      <
       />
       
   );
