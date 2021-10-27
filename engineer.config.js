@@ -1,13 +1,18 @@
-const fs = require('fs');
+const fs = require("fs");
+const removeDuplicateComponentsPlugin = require("./.satelite/engineer/plugins/removeDuplicateComponents.js");
 
-const modelsFolder = './.satelite/engineer/model/';
-const pagesFolder = './.satelite/engineer/pages/';
+const modelsFolder = "./.satelite/engineer/model/";
+const pagesFolder = "./.satelite/engineer/pages/";
 
-module.exports = () => {
+const config = () => {
   return {
     data: {
-      schema: fs.readdirSync(modelsFolder).map(file=>require(`${modelsFolder}/${file}`)),
-      pages: fs.readdirSync(pagesFolder).map(file=>require(`${pagesFolder}/${file}`)),
+      schema: fs
+        .readdirSync(modelsFolder)
+        .map((file) => require(`${modelsFolder}/${file}`)),
+      pages: fs
+        .readdirSync(pagesFolder)
+        .map((file) => require(`${pagesFolder}/${file}`)),
     },
     templates: [
       {
@@ -22,3 +27,7 @@ module.exports = () => {
     ],
   };
 };
+
+const computedConfig = removeDuplicateComponentsPlugin(config());
+
+module.exports = () => computedConfig;
