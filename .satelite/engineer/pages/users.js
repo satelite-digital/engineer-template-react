@@ -18,7 +18,28 @@ const actions = [
   },
 ];
 
-const ui = {
+const ui = [
+  {
+    component: "Table",
+    props: [
+      {
+        prop: "rows",
+        value: "items",
+      },
+      {
+        prop: "headers",
+        value: "headers",
+      },
+      {
+        prop: "onRowClick",
+        value: "onUserClick",
+      },
+    ],
+  },
+  {
+    component: "Hero",
+  },
+  {
   component: "Table",
   props: [
     {
@@ -34,8 +55,10 @@ const ui = {
       value: "onUserClick",
     },
   ],
-};
+}];
 
+// Instead of including import and implementation code, this should only reference a hook from a pre-built library of common hooks.
+// 
 const hooks = [
   {
     id: "history",

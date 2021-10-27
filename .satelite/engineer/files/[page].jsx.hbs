@@ -1,10 +1,8 @@
 {{#each hooks}}
 {{{import}}}
 {{/each}}
-{{#each ui}}
-{{#if component}}
-import {{component}} from "../../components/{{component}}";
-{{/if}}
+{{#each _components}}
+import {{this}} from "../../components/{{this}}";
 {{/each}}
 
 const {{name}} = () => {
@@ -18,6 +16,7 @@ const {{name}} = () => {
   const {{id}} = {{{value}}};
   {{/each}}
   return (
+    <>
       {{#each ui}}
       <{{component}}
         {{#each props}}
@@ -25,7 +24,7 @@ const {{name}} = () => {
         {{/each}}
       />
       {{/each}}
-      
+    </>
   );
 };
 
