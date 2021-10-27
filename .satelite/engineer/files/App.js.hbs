@@ -1,0 +1,39 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+{{#each pages}}
+import {{name}} from "./pages/{{name}}";
+{{/each}}
+function App() {
+  const links = [
+  {{#each pages}}
+  {{#if navigation}}
+    {
+      path: "{{path}}",
+      text: "{{name}}",
+    },
+  {{/if}}
+  {{/each}}
+  ];
+  return (
+    <Router>
+      <header className="p-8">
+        <Navbar links={links} />
+      </header>
+      <main className="p-8">
+        <Switch>
+          {{#each pages}}
+          <Route path="{{path}}">
+            <{{name}} />
+          </Route>
+          {{/each}}
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </main>
+    </Router>
+  );
+}
+
+export default App;

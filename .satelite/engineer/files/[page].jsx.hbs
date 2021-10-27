@@ -1,0 +1,31 @@
+{{#each hooks}}
+{{{import}}}
+{{/each}}
+{{#each _components}}
+import {{this}} from "../../components/{{this}}";
+{{/each}}
+
+const {{name}} = () => {
+  {{#each hooks}}
+  {{{implementation}}}
+  {{/each}}
+  {{#each state}}
+  {{type}} {{id}} = {{{value}}};
+  {{/each}}
+  {{#each actions}}
+  const {{id}} = {{{value}}};
+  {{/each}}
+  return (
+    <>
+      {{#each ui}}
+      <{{component}}
+        {{#each props}}
+        {{prop}}={ {{~value~}} }
+        {{/each}}
+      />
+      {{/each}}
+    </>
+  );
+};
+
+export default {{name}};
